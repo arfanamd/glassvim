@@ -1,0 +1,5 @@
+#include <iostream>
+
+int main(int argc, const char *argv[]) {}
+
+// vim:ft=cpp:ts=4:sw=4:nosi:noai:noet:cin

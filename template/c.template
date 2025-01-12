@@ -1,0 +1,5 @@
+#include <stdio.h>
+
+int main(int argc, const char *argv[]) {}
+
+// vim:ft=c:ts=4:sw=4:nosi:noai:noet:cin

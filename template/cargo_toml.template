@@ -1,0 +1,35 @@
+# https://doc.rust-lang.org/cargo/reference/manifest.html
+# https://github.com/spdx/license-list-XML/tree/master/src
+# https://crates.io/category_slugs
+[package]
+name = "program_name"
+license = "GPL-2.0-only"
+authors = ["arfanamd <@arfanamd>", ] 
+version = "0.1.0"
+repository = "upstream.repo.link"
+description = "short description of the program"
+
+edition = "2021"
+rust-version = ""
+
+readme = "README.md"
+categories = ["command-line-utilities", ]
+
+publish = "false"
+metadata = ""
+default-run = ""
+resolver = ""
+
+[build]
+rustc-wrapper = "rustc -C prefer-dynamic"
+
+[dependencies]
+
+[profile.dev]
+opt-level = 1 # 0, 1, 2, 3
+debug = 1 # 0 = off, 1 = line tables only, 2 = full
+overflow-checks = true # true or false
+panic = "abort" # abort or unwind
+incremental = true # true or false
+
+# vim:ft=toml
