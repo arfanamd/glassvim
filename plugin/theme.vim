@@ -6,6 +6,9 @@ vim9script
 # Personal Vim Theme.
 #--------------------------------------------------------------------
 
+# Activate syntax highlighting
+syntax enable
+
 # Clear all highlighting groups that we are going to use.
 highlight clear ColorColumn 
 highlight clear Comment     
@@ -62,7 +65,7 @@ highlight Todo                      ctermfg=011  cterm=UNDERLINE
 highlight Visual                                 cterm=REVERSE
 highlight VertSplit                 ctermfg=007  cterm=NONE
 highlight WarningMsg   ctermbg=NONE ctermfg=003  cterm=NONE
-highlight WildMenu     ctermbg=008  ctermfg=007  cterm=BOLD
+highlight WildMenu     ctermbg=NONE ctermfg=015  cterm=BOLD
 
 # Reuse color
 highlight link VertSplit Normal
