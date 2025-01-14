@@ -80,6 +80,9 @@ set shiftwidth=4
 
 # Useful to see the difference between tabs and spaces and for trailing
 # blanks.
+set list
+
+# Strings to use in "list" mode and for the ":list" command.
 set listchars=tab:\¦\ ,nbsp:+
 
 # Characters to fill vertical separators.
