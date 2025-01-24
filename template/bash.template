@@ -1,4 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/env bash
 set -euf -o pipefail
 
+printf "%s\n" "Hello, World!"
+
 # vim:ft=bash:ts=4:sw=4:nocin:noet:noai:si

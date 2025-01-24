@@ -1,5 +1,8 @@
 #include <iostream>
 
-int main(int argc, const char *argv[]) {}
+int main(int argc, const char *argv[]) {
+	std::cout << "Hello, World!" << std::endl;
+	return 0;
+}
 
 // vim:ft=cpp:ts=4:sw=4:nosi:noai:noet:cin

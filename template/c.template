@@ -1,5 +1,8 @@
 #include <stdio.h>
 
-int main(int argc, const char *argv[]) {}
+int main(int argc, const char *argv[]) {
+	printf("%s\n", "Hello, World!");
+	return 0;
+}
 
 // vim:ft=c:ts=4:sw=4:nosi:noai:noet:cin

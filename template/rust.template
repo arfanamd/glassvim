@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 
-fn main() {}
+fn main() {
+	println!("Hello, World!");
+}
 
 // vim:ft=rust:noet:ai:cin:nosi
