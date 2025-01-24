@@ -11,6 +11,7 @@ vim9script
 # matchdelete({id} [, {win})
 # clearmatches([{win}])
 # win_getid([{win} [, {tab}]])
+# visualmode([{expr}])
 #
 # TODO:
 # * make "vnoremap" handle its own range.
@@ -27,7 +28,7 @@ endif
 # Highlight for position.
 highlight vifo_mark cterm=bold ctermbg=brown ctermfg=white
 
-def g:VisualFocus(wid: number)
+def VisualFocus(wid: number)
 	const vifo_beg_y: number = getpos("'<")[1] 
 	const vifo_end_y: number = getpos("'>")[1] 
 	const vifo_beg_x: number = getpos("'<")[2]
@@ -62,9 +63,9 @@ def g:VisualFocus(wid: number)
 		endif
 	endif
 	
-	matchaddpos("vifo_mark", vifo_poslist)
+	matchaddpos("vifo_mark", vifo_poslist, wid)
 enddef
 
-vnoremap m :call VisualFocus(win_getid())<cr>
+vnoremap <silent> m :call <SID>VisualFocus(win_getid())<cr>
 
 # vim:ft=vim:sw=2:ts=2:noai:noci:si
