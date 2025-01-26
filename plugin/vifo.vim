@@ -14,10 +14,12 @@ vim9script
 # visualmode([{expr}])
 #
 # TODO:
-# * make "vnoremap" handle its own range.
-# * cleanup code.
 # * implement clear visual pos.
-# * 
+# * make the visual mark only applied to the buffer
+#
+# BUGS:
+# * Visual mark dissappear if multiple file was opened on the
+# same window (buffer was hidden)
 
 if exists("g:vifo_loaded")
 	finish
