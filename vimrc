@@ -103,6 +103,16 @@ set directory=~/.vim/swap/
 # "gf", [f, ]f, ^Wf, ":find", ":sfind", ":tabfind" and other commands,
 set path=.,,
 
+# Program to use for the ":grep" command.  When "grepprg" is set to
+# "internal" the ":grep" command works like ":vimgrep".
+# -H Print the file name for each match.
+# -E Interpret PATTERNS as extended regular expressions.
+# -r Read all files under each directory, recursively, following
+#    symbolic links only if they are on the command line.
+# -n Prefix each line of output with the 1-based line number within
+#    its input file.
+set grepprg=grep\ --exclude-dir=.git\ -HErn\ $*
+
 #----- }}}
 #----- Netrw {{{
 g:netrw_banner      = 0
