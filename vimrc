@@ -120,9 +120,15 @@ runtime ftplugin/man.vim
 #----- Netrw {{{
 g:netrw_banner      = 0
 g:netrw_dirhistmax  = 0
-g:netrw_list_hide   = '.*\.png,.*\.jp?g,.*\.svg,.*\.mp[34]'
+g:netrw_list_hide   = '.\+\.\(jpe\?g\|png\|webp\|svg\|mp[34]\|ogg\|opus\)'
 g:netrw_mousemaps   = 0
 g:netrw_use_noswf   = 1
+g:netrw_altv        = 1
+g:netrw_liststyle   = 1
+g:netrw_nogx        = 1
+g:netrw_keepdir     = 0
+g:netrw_sizestyle   = 'H'
+g:netrw_timefmt     = '%a %x %X'
 #----- }}}
 #----- Keymaps {{{
 nnoremap tn :tabnew<cr>
@@ -133,7 +139,7 @@ nnoremap ,l :tabnext<cr>
 nnoremap ,h :tabprevious<cr>
 nnoremap ,j :wincmd j<cr>
 nnoremap ,k :wincmd k<cr>
-nnoremap ,o :35%Lexplore<cr>
+nnoremap <c-o> :35%Lexplore<cr>
 nnoremap ,w :up<cr>
 nnoremap ,b :ls<cr>:buff<space>
 nnoremap ,q :confirm q<cr>
