@@ -70,10 +70,10 @@ def QFDebugSign()
 	
 	if len(valid_list) > 0
 		for dbg in valid_list
-			if dbg.type == 'E'
+			if dbg.type == 'E' || dbg.type == 'e'
 				sign_type = "QFDebug_err"
 				e_c += 1
-			elseif dbg.type == 'W'
+			elseif dbg.type == 'W' || dbg.type == 'w'
 				sign_type = "QFDebug_warn"
 				w_c += 1
 			else
