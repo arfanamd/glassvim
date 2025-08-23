@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/env bash
+#!$PREFIX/bin/env bash
 set -euf -o pipefail
 
 printf "%s\n" "Hello, World!"
