@@ -116,6 +116,14 @@ set grepprg=grep\ --exclude-dir=.git\ -HErn\ $*
 # This plugin displays a manual page directly in Vim.
 runtime ftplugin/man.vim
 
+# Program to use for the "K" command.
+# ":help" may be used to access the Vim internal help.
+# When the first character is ":", the command is invoked as a Vim
+# Ex command with [count] added as an argument if it is not zero.
+# When "man", "man -s" or an Ex command is used, Vim will automatically
+# translate a count for the "K" command and pass it as the first arg.
+# For "man -s" the "-s" is removed when there is no count.
+set keywordprg=:help
 #----- }}}
 #----- Netrw {{{
 g:netrw_banner      = 0
@@ -130,6 +138,11 @@ g:netrw_keepdir     = 0
 g:netrw_sizestyle   = 'H'
 g:netrw_timefmt     = '%a %x %X'
 #----- }}}
+#----- Man {{{
+g:no_man_maps = 1
+g:ft_man_open_mode = 'tab'
+g:ft_man_no_sect_fallback = 1
+# }}}
 #----- Keymaps {{{
 nnoremap tn :tabnew<cr>
 nnoremap ,J o<esc>k
