@@ -1,4 +1,16 @@
 vim9script
+#--------------------------------------------------------------------
+# Author:  arfanamd
+# License: Released under the same license as Vim itself.
+#
+# Personal Vim Plugin (Console).
+#--------------------------------------------------------------------
+
+if exists("g:console_loaded")
+	finish
+endif
+
+g:console_loaded = true
 
 # Console default variables.
 
