@@ -46,7 +46,7 @@ enddef
 # This function returns the buffer number of the terminal.
 def g:Console_open(): number
 	var term_opts: dict<any> = {
-		'term_name': ' Console ',
+		'term_name': '',
 		'term_rows': winheight(0) * Console_control_height() / 100,
 		'term_kill': 'kill',
 		'term_finish': 'close',
@@ -80,7 +80,7 @@ def g:Console_run(): number
 			cmds,
 		]
 		var term_opts: dict<any> = {
-			'term_name': ' Run ',
+			'term_name': '',
 			'term_rows': winheight(0) * Console_control_height() / 100,
 			'term_kill': 'int',
 			'term_finish': 'open',
@@ -104,5 +104,27 @@ def g:Console_run(): number
 		return 0
 	endif
 enddef
+
+# Properties for statusline
+highlight ConsoleStatusline    ctermbg=none ctermfg=015 cterm=underline
+highlight ConsoleStatuslineNC  ctermbg=none ctermfg=007 cterm=underline
+
+def g:Console_statusline()
+	var console_bufnr: number   = bufnr()
+	var console_info: dict<any> = job_info(term_getjob(console_bufnr))
+	
+	var console_barline: string = "%#Normal#%#ConsoleStatusline# "
+	console_barline ..= console_info['tty_out'] .. "%="
+	console_barline ..= "  PID: " .. console_info['process']
+	console_barline ..= " (" .. console_info['status'] .. ")"
+	
+	setbufvar(console_bufnr, "&statusline", console_barline)
+enddef
+
+augroup Console
+	autocmd!
+	autocmd TerminalOpen * setbufvar("", "&filetype", "tr")
+	autocmd FileType tr call g:Console_statusline() | setlocal readonly
+augroup END
 
 # vim:ft=vim:sw=2:ts=2
