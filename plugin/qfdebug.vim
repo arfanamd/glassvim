@@ -12,24 +12,24 @@ endif
 
 g:QFDebug_loaded = true
 
-# Make the signs appear inline with the line numbers.
+# Display sign in the column "number". If the column number is
+# not present, then behaves like "auto".
 # See ":help signcolumn" for another options.
 &signcolumn = "number"
 
-# QFDebug color scheme
-highlight QFDebug_err  cterm=none ctermbg=red   
-highlight QFDebug_warn cterm=none ctermbg=yellow
-highlight QFDebug_info cterm=none ctermbg=white 
+# These color-sets are defined to differentiate between all debug
+# enumeration states.
+highlight QFDebug_err  cterm=none ctermfg=red   
+highlight QFDebug_warn cterm=none ctermfg=yellow
+highlight QFDebug_info cterm=none ctermfg=white 
 
-# QFDebug sign
-sign define QFDebug_err  numhl=QFDebug_err  culhl=QFDebug_err
-sign define QFDebug_warn numhl=QFDebug_warn culhl=QFDebug_warn
-sign define QFDebug_info numhl=QFDebug_info culhl=QFDebug_info
+# These "sign" will represent all debug enumeration styles.
+sign define QFDebug_err  numhl=QFDebug_err  text==>
+sign define QFDebug_warn numhl=QFDebug_warn text==>
+sign define QFDebug_info numhl=QFDebug_info text==>
 
-# QFDebug augroup & autocmd
-# Open the QuickFix buffer at the bottom of current window and
-# place all the signs on the corresponding line if there are any
-# errors or warning returned after executing the ":make" command.
+# Open the QuickFix window buffer at the bottom of current window
+# and place all debug sign on the corresponding line.
 augroup QFDebug
 	autocmd!
 	autocmd QuickFixCmdPre [^l]* call QFDebugUnsign()
@@ -37,15 +37,15 @@ augroup QFDebug
 	autocmd FileType qf call QFDebugBufInit()
 augroup END
 
-# QFDebug initialize quickfix buffer options.
+# Initialize QuickFix window buffer.
 def QFDebugBufInit()
 	&wrap = 1
 	&relativenumber = 0
 	&number = 0
 enddef
 
-# Filter only the valid recognized error or warning messages lists
-# from the "getqflist()" function.
+# Filter valid recognized message types, e.g., error, warning and
+# info from "getqflist()".
 def QFDebugParse(): list<dict<any>>
 	var parse_qflist: list<dict<any>>
 	
@@ -60,7 +60,7 @@ def QFDebugParse(): list<dict<any>>
 	return parse_qflist
 enddef
 
-# Place the signs on the corresponding lines.
+# Place all the sign on the corresponding lines.
 def QFDebugSign()
 	var valid_list: list<dict<any>> = QFDebugParse()
 	var sign_type: string = ""
@@ -90,24 +90,24 @@ def QFDebugSign()
 	endif
 enddef
 
-# Clear all placed signs.
+# Clear all placed sign.
 def QFDebugUnsign()
 	sign_unplace("QFDebug")
 	QFDebugBufClose()
 enddef
 
-# Open QuickFix buffer.
+# Open QuickFix buffer window.
 def QFDebugBufOpen(nr: number)
 	silent! execute "copen 8"
 	silent! execute nr .. "wincmd w"
 enddef
 
-# Close QuickFix buffer.
+# Close QuickFix buffer window.
 def QFDebugBufClose()
 	silent! execute "cclose"
 enddef
 
-# Generate statusline for QuickFix
+# Generate "statusline" for QuickFix buffer window.
 def g:QFDebugStatusLine(i: number, w: number, e: number): string
 	var sl: string = "%#Normal#%#StatusLine# QuickFixDebug %="
 	sl ..= "  Info: " .. i
