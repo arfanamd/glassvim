@@ -157,6 +157,7 @@ nnoremap ,w :up<cr>
 nnoremap ,b :ls<cr>:buff<space>
 nnoremap ,q :confirm q<cr>
 nnoremap ,Q :confirm qa<cr>
+nnoremap ,z :tab split<cr>
 nnoremap <silent> <f2> mp:let _s=@/<bar>:%s/\s\+$//e<bar>:let @/=_s<bar><cr>'pzz
 nmap ,m <plug>ManPreGetPage
 #----- }}}
