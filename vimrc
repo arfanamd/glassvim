@@ -123,7 +123,7 @@ runtime ftplugin/man.vim
 # When "man", "man -s" or an Ex command is used, Vim will automatically
 # translate a count for the "K" command and pass it as the first arg.
 # For "man -s" the "-s" is removed when there is no count.
-set keywordprg=:help
+set keywordprg=:tab\ help
 #----- }}}
 #----- Netrw {{{
 g:netrw_banner      = 0
