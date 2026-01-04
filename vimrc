@@ -171,7 +171,7 @@ g:netrw_keepdir     = 0
 g:netrw_sizestyle   = 'H'
 
 # Specify format string to vim's strftime().
-g:netrw_timefmt     = '%a %x %X'
+g:netrw_timefmt     = '%a %d %b %y %H:%M'
 #----- }}}
 #----- Man {{{
 g:no_man_maps = 1
