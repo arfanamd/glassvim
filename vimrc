@@ -126,16 +126,51 @@ runtime ftplugin/man.vim
 set keywordprg=:tab\ help
 #----- }}}
 #----- Netrw {{{
+# Enable (1) or suppress (0) the banner.
 g:netrw_banner      = 0
+
+# Controls maximum quantity of past history.
+# 0 to suppress history.
 g:netrw_dirhistmax  = 0
+
+# Comma-separated pattern list for hiding files.
+# Patterns are regular expressions.
 g:netrw_list_hide   = '.\+\.\(jpe\?g\|png\|webp\|svg\|mp[34]\|ogg\|opus\)'
+
+# Enable (1) or disable (0) mouse buttons while browsing.
 g:netrw_mousemaps   = 0
+
+# Netrw normally avoids writing swapfiles for browser buffers.
+# However, under some systems this apparently is causing nasty
+# "ml_get" errors to appear; if you're getting ml_get errors, try
+# putting "let g:netrw_use_noswf = 0" in your .vimrc.
 g:netrw_use_noswf   = 1
+
+# Change from left splitting to right splitting.
 g:netrw_altv        = 1
+
+# Listing style:
+# = 0: thin listing (one file per line)
+# = 1: long listing (one file per line with time stamp information
+#      and file size)
+# = 2: wide listing (multiple files in columns)
+# = 3: tree style listing
 g:netrw_liststyle   = 1
+
+# If this variable exists, then the "gx" map will not be available
+# (see netrw-gx)
 g:netrw_nogx        = 1
+
+# = 0: keep current directory the same as the browsing directory.
+# = 1: keep current directory immune from the browsing directory.
 g:netrw_keepdir     = 0
+
+# = "b": actual bytes
+# = "h": human-readable uses 1000 base
+# = "H": human-readable uses 1024 base
 g:netrw_sizestyle   = 'H'
+
+# Specify format string to vim's strftime().
 g:netrw_timefmt     = '%a %x %X'
 #----- }}}
 #----- Man {{{
