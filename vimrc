@@ -172,10 +172,33 @@ g:netrw_sizestyle   = 'H'
 
 # Specify format string to vim's strftime().
 g:netrw_timefmt     = '%a %d %b %y %H:%M'
+
+# Open the file by:
+# = 0: re-using the same window
+# = 1: horizontally splitting the window first
+# = 2: vertically splitting the window first
+# = 3: open file in new tab
+# = 4: act like "P" (ie. open previous window)
+#g:netrw_browse_split = 3
+
+# Specify user's preference for a viewer.
+# Here I'm using "open" as an alias for "xdg-open".
+#g:netrw_browsex_viewer = 'open'
+
+# If this variable exists and is non-zero, then the <c-tab> map
+# supporting shrinking/expanding a Lexplore or netrw window will
+# be enabled. (see netrw-c-tab)
+#g:netrw_usetab = 1
 #----- }}}
 #----- Man {{{
+# Disable all Man local mapping.
 g:no_man_maps = 1
+
+# Open Man page on new tab.
 g:ft_man_open_mode = 'tab'
+
+# Make Man {number} {name} to behave like man {number} {name} by
+# not running man {name} if no page is found.
 g:ft_man_no_sect_fallback = 1
 # }}}
 #----- Keymaps {{{
