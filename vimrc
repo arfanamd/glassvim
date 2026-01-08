@@ -210,7 +210,7 @@ nnoremap ,l :tabnext<cr>
 nnoremap ,h :tabprevious<cr>
 nnoremap ,j :wincmd j<cr>
 nnoremap ,k :wincmd k<cr>
-nnoremap <c-o> :35%Lexplore<cr>
+nnoremap <c-o> :Rexplore<cr>
 nnoremap ,w :up<cr>
 nnoremap ,b :ls<cr>:buff<space>
 nnoremap ,q :confirm q<cr>
