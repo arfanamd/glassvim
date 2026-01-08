@@ -218,6 +218,8 @@ nnoremap ,Q :confirm qa<cr>
 nnoremap ,z :tab split<cr>
 nnoremap <silent> <f2> mp:let _s=@/<bar>:%s/\s\+$//e<bar>:let @/=_s<bar><cr>'pzz
 nnoremap ,m <plug>ManPreGetPage
+nnoremap ,x :call g:Console_run()<cr>
+nnoremap ,X :call g:Console_open()<cr>
 #----- }}}
 
 # vim:ft=vim:ts=4:sw=4
