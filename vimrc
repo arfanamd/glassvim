@@ -217,7 +217,7 @@ nnoremap ,q :confirm q<cr>
 nnoremap ,Q :confirm qa<cr>
 nnoremap ,z :tab split<cr>
 nnoremap <silent> <f2> mp:let _s=@/<bar>:%s/\s\+$//e<bar>:let @/=_s<bar><cr>'pzz
-nmap ,m <plug>ManPreGetPage
+nnoremap ,m <plug>ManPreGetPage
 #----- }}}
 
 # vim:ft=vim:ts=4:sw=4
