@@ -190,6 +190,17 @@ g:netrw_timefmt     = '%a %d %b %y %H:%M'
 # be enabled. (see netrw-c-tab)
 #g:netrw_usetab = 1
 
+# Some Netrw keymaps I do not use.
+augroup netrw_disable_mapping
+	autocmd!
+	autocmd FileType netrw nnoremap <buffer> p <Nop> \
+		| nnoremap <buffer> <c-r> <Nop> \
+		| nnoremap <buffer> a <Nop> \
+		| nnoremap <buffer> C <Nop> \
+		| nnoremap <buffer> o <Nop> \
+		| nnoremap <buffer> P <Nop> \
+		| nnoremap <buffer> v <Nop> \
+augroup END
 #----- }}}
 #----- Man {{{
 # Disable all Man local mapping.
