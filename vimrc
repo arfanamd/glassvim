@@ -189,6 +189,7 @@ g:netrw_timefmt     = '%a %d %b %y %H:%M'
 # supporting shrinking/expanding a Lexplore or netrw window will
 # be enabled. (see netrw-c-tab)
 #g:netrw_usetab = 1
+
 #----- }}}
 #----- Man {{{
 # Disable all Man local mapping.
@@ -210,7 +211,7 @@ nnoremap ,l :tabnext<cr>
 nnoremap ,h :tabprevious<cr>
 nnoremap ,j :wincmd j<cr>
 nnoremap ,k :wincmd k<cr>
-nnoremap <c-o> :Rexplore<cr>
+nnoremap <c-o> :30%Lexplore<cr>
 nnoremap ,w :up<cr>
 nnoremap ,b :ls<cr>:buff<space>
 nnoremap ,q :confirm q<cr>
