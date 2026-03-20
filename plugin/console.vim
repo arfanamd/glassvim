@@ -26,10 +26,10 @@ g:console_open_position = "below"
 g:console_run_position  = "tab" 
 
 # Adjust the height of the terminal window. This option is ignored
-# for the "g:console_open_position" or "g:console_run_position" if
-# it's value is set to "tab".
+# if "g:console_open_position" or "g:console_run_position" value
+# is set to "tab".
 # -----------------------------------------------------------------
-# Valid value are: [15-80].
+# Valid value are: [15-80] in percentage. Default are 20%.
 g:console_height = 20
 
 def Console_control_height(): number
@@ -42,9 +42,10 @@ def Console_control_height(): number
 	endif
 enddef
 
-# Open terminal window with the default shell.
-# This function returns the buffer number of the terminal.
+# Open the default shell on the terminal window.
+# This function returns the terminal buffer number.
 def g:Console_open(): number
+	# Options to create new terminal buffer. See "term_start()".
 	var term_opts: dict<any> = {
 		'term_name': '',
 		'term_rows': winheight(0) * Console_control_height() / 100,
@@ -67,9 +68,9 @@ def g:Console_open(): number
 	endif
 enddef
 
-# Run commands in a terminal window. The window will not closed
-# automatically after the command executions is finished.
-# This function returns the buffer number of the terminal.
+# Run commands in a terminal window.
+# The window will not closed automatically after the execution
+# is finished. This function returns the terminal buffer number.
 def g:Console_run(): number
 	var cmds: string = input('run: ', '', 'shellcmd')
 	
@@ -79,6 +80,7 @@ def g:Console_run(): number
 			&shellcmdflag,
 			cmds,
 		]
+		# Options to create new terminal buffer. See "term_start()".
 		var term_opts: dict<any> = {
 			'term_name': '',
 			'term_rows': winheight(0) * Console_control_height() / 100,
