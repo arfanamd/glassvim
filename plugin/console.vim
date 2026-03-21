@@ -72,7 +72,8 @@ enddef
 # The window will not closed automatically after the execution
 # is finished. This function returns the terminal buffer number.
 def g:Console_run(): number
-	var cmds: string = input('run: ', '', 'shellcmd')
+	# BUG: "shellcmdline" completion doesn't work in vim < v9.1.1226.
+	var cmds: string = input('run: ', '', 'shellcmdline')
 	
 	if cmds != ""
 		var term_cmds: list<string> = [
