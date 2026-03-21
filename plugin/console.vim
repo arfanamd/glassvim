@@ -6,7 +6,7 @@ vim9script
 # Personal Vim Plugin (Console).
 #--------------------------------------------------------------------
 
-if exists("g:console_loaded")
+if exists("g:console_loaded") || !has('terminal')
 	finish
 endif
 
