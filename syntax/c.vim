@@ -14,14 +14,6 @@ runtime! $VIMRUNTIME/syntax/c.vim
 
 iabbrev <buffer> inclide include
 
-highlight cComment   ctermfg=068  cterm=bold
-highlight cConstant  ctermfg=217  cterm=none
-highlight cStatement ctermfg=011  cterm=none
-highlight cPreProc   ctermfg=081  cterm=none
-highlight cType      ctermfg=121  cterm=none
-highlight cSpecial   ctermfg=224  cterm=none
-highlight cStructure ctermfg=049  cterm=none
-
 highlight link cConditional      cNumber
 highlight link cDefine           cPreProc
 highlight link cInclude          cPreProc
