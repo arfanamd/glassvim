@@ -7,7 +7,6 @@ vim9script
 #--------------------------------------------------------------------
 
 # TODO:
-# * highlight for diff
 
 if v:version > 580
 	highlight clear
@@ -92,10 +91,6 @@ ClearHLGroup('WildMenu')
 SetHLGroup('ColorColumn', '001', '', {'none': 1})
 SetHLGroup('CursorLine', '000', '', {'none': 1})
 SetHLGroup('CursorLineNr', '008', '015', {'bold': 1})
-SetHLGroup('DiffAdd', '136', '', {'none': 1})
-SetHLGroup('DiffChange', '237', '', {'none': 1})
-SetHLGroup('DiffDelete', '60', '234', {'none': 1})
-SetHLGroup('DiffText', '124', '', {'none': 1})
 SetHLGroup('Directory', '', '004', {'none': 1})
 SetHLGroup('ErrorMsg', '001', '015', {'none': 1})
 SetHLGroup('Folded', '008', '', {'none': 1})
@@ -132,6 +127,12 @@ SetHLGroup('Special', '', '223', {'none': 1})
 SetHLGroup('String', '', '189', {'none': 1})
 SetHLGroup('Todo', '', '223', {'underline': 1})
 SetHLGroup('Type', '', '158', {'none': 1})
+
+# Diff colors
+SetHLGroup('DiffAdd', '', '113', {'none': 1})
+SetHLGroup('DiffChange', '', '103', {'none': 1})
+# SetHLGroup('DiffDelete', '', '', {'none': 1})
+SetHLGroup('DiffText', '', '210', {'none': 1})
 
 # Reuse color
 LinkHLGroup('VertSplit', 'Normal')
