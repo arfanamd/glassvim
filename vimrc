@@ -125,6 +125,9 @@ runtime ftplugin/man.vim
 # For "man -s" the "-s" is removed when there is no count.
 set keywordprg=:tab\ help
 #----- }}}
+#----- Color {{{
+colorscheme pastel_glass
+#----- }}}
 #----- Netrw {{{
 # Enable (1) or suppress (0) the banner.
 g:netrw_banner      = 0

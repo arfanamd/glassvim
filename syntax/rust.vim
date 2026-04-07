@@ -17,14 +17,6 @@ iabbrev <buffer> _unused #![allow(unused)]
 iabbrev <buffer> _deadco #![allow(dead_code)]
 
 # Rust custom highlight
-highlight clear rustStructure
-highlight clear rustType
-highlight clear rustSigil
-
-highlight rustStructure ctermfg=049  ctermbg=none cterm=none
-highlight rustType      ctermfg=121  ctermbg=none cterm=none
-highlight rustSigil                               cterm=italic,bold
-
 highlight link rustModPathSep Delimiter
 highlight link rustSelf       rustSigil
 highlight link rustUnion      rustStructure
