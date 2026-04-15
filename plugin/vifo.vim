@@ -30,6 +30,10 @@ endif
 # Highlight for position.
 highlight vifo_mark cterm=bold ctermbg=brown ctermfg=white
 
+def JumpBack(lin: number, col: number)
+	cursor(lin, col)
+enddef
+
 def VisualFocus(wid: number)
 	const vifo_beg_y: number = getpos("'<")[1] 
 	const vifo_end_y: number = getpos("'>")[1] 
@@ -66,6 +70,7 @@ def VisualFocus(wid: number)
 	endif
 	
 	matchaddpos("vifo_mark", vifo_poslist, wid)
+	JumpBack(vifo_beg_y, vifo_beg_x)
 enddef
 
 vnoremap <silent> m :call <SID>VisualFocus(win_getid(tabpagenr()))<cr>
