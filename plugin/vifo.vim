@@ -68,6 +68,6 @@ def VisualFocus(wid: number)
 	matchaddpos("vifo_mark", vifo_poslist, wid)
 enddef
 
-vnoremap <silent> m :call <SID>VisualFocus(win_getid())<cr>
+vnoremap <silent> m :call <SID>VisualFocus(win_getid(tabpagenr()))<cr>
 
 # vim:ft=vim:sw=2:ts=2:noai:noci:si
