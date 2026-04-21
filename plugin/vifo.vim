@@ -5,16 +5,8 @@ vim9script
 #
 # Personal Vim Plugin (Visual Highlight Position).
 #--------------------------------------------------------------------
-# XXX:
-# matchaddpos({group}, {pos} [, {priority} [, {id} [, {dict}]]])
-# getmatches([{win}])
-# matchdelete({id} [, {win})
-# clearmatches([{win}])
-# win_getid([{win} [, {tab}]])
-# visualmode([{expr}])
 #
 # TODO:
-# * implement clear visual pos.
 # * make the visual mark only applied to the buffer
 #
 # BUGS:
