@@ -89,6 +89,6 @@ def VisualFocus(wid: number)
 	JumpBack(vifo_beg_y, vifo_beg_x)
 enddef
 
-vnoremap <silent> m :call <SID>VisualFocus(win_getid(tabpagenr()))<cr>
+vnoremap <silent> m :call <SID>VisualFocus(win_getid(winnr(), tabpagenr()))<cr>
 
 # vim:ft=vim:sw=2:ts=2:noai:noci:si
